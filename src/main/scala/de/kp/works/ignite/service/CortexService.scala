@@ -67,7 +67,17 @@ class CortexService(ignite:Ignite, cfg:Config) extends AbstractService {
         s"[CortexService] The configured user name & password is not accepted.")
 
     /*
-     * STEP #3: Build the Change (PUT) listener to send
+     * STEP #3: After a successful login, all enabled
+     * analyzers for the organization the user belongs
+     * to, have to be retrieved registered in the
+     * [CortexRegistry]
+     */
+    if (!client.analyzers)
+      throw new Exception(
+        s"[CortexService] The retrieval of the enabled analyzers failed.")
+
+    /*
+     * STEP #4: Build the Change (PUT) listener to send
      * cyber observable to the (TheHive) Cortex server
      */
     listener = new PutListener(ignite, cacheName, client)

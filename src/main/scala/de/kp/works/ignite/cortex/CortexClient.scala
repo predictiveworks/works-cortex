@@ -18,10 +18,39 @@ package de.kp.works.ignite.cortex
  *
  */
 
+import com.google.gson.JsonObject
 import com.typesafe.config.Config
 
 class CortexClient(cfg:Config) {
+  /**
+   * Extract the endpoint configuration
+   * parameters and build the base url
+   */
+  private val endpoint = {
 
+    /* The host of the Cortex Server */
+    val host = cfg.getString("host")
+
+    /* The port of the Cortex Server */
+    val port = cfg.getInt("port")
+
+    /* The protocol of the Cortex Server */
+    val protocol = cfg.getString("protocol")
+    s"$protocol://$host:$port/api"
+
+  }
+
+  /**
+   * This methods allows a user to retrieve all enabled
+   * analyzers within his organization.
+   *
+   * The result is used to populate the [CortexRegistry],
+   * a prerequisite step to enable analyzer requests.
+   *
+   */
+  def analyzers:Boolean = ???
+
+  def close():Unit = ???
   /*
    * This method is used to validate whether the
    * provided user name & password exists. This is
@@ -31,7 +60,23 @@ class CortexClient(cfg:Config) {
    * there the configured API_KEY must be used
    */
   def isLogin:Boolean = ???
+  /**
+   * This method allows a user with an `analyze` or `orgAdmin`
+   * role to run analyzers on observables of different data
+   * types.
+   *
+   * This request creates an analyzer job and returns the
+   * respective job description
+   */
+  def run:Unit = ???
 
-  def close():Unit = ???
+  private def buildRequestBody(data:String, dataType:String):JsonObject = {
 
+    val body = new JsonObject
+
+    body.addProperty("data", data)
+    body.addProperty("dataType", dataType)
+    body
+
+  }
 }
