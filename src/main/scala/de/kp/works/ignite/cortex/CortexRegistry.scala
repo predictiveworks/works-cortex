@@ -1,4 +1,7 @@
 package de.kp.works.ignite.cortex
+
+import com.google.gson.JsonArray
+
 /*
  * Copyright (c) 2020 - 2021 Dr. Krusche & Partner PartG. All rights reserved.
  *
@@ -23,5 +26,7 @@ package de.kp.works.ignite.cortex
  * analyzers and their respective configurations
  */
 object CortexRegistry {
+
+  def register(analyzers:JsonArray):Unit = ???
 
 }

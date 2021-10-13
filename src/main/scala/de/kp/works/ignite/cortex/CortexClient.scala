@@ -18,15 +18,20 @@ package de.kp.works.ignite.cortex
  *
  */
 
-import com.google.gson.JsonObject
+import com.google.gson._
 import com.typesafe.config.Config
+import de.kp.works.http.HttpConnect
 
-class CortexClient(cfg:Config) {
+import scala.collection.JavaConversions._
+
+class CortexClient(cfg:Config) extends HttpConnect {
+
+  private val apiKey = cfg.getString("apiKey")
   /**
    * Extract the endpoint configuration
    * parameters and build the base url
    */
-  private val endpoint = {
+  private val baseUrl = {
 
     /* The host of the Cortex Server */
     val host = cfg.getString("host")
@@ -39,7 +44,6 @@ class CortexClient(cfg:Config) {
     s"$protocol://$host:$port/api"
 
   }
-
   /**
    * This methods allows a user to retrieve all enabled
    * analyzers within his organization.
@@ -47,8 +51,53 @@ class CortexClient(cfg:Config) {
    * The result is used to populate the [CortexRegistry],
    * a prerequisite step to enable analyzer requests.
    *
+   * POST /api/analyzer/_search
+   *
+   * Authorization requires the API_KEY
    */
-  def analyzers:Boolean = ???
+  def analyzers:Boolean = {
+
+    val endpoint = s"$baseUrl/analyzer/_search"
+    /*
+     * It is expected that the Cortex server determines
+     * the current user and its roles from the respective
+     * API_KEY
+     */
+    val headers = Map(
+      "Authorization" -> s"Bearer ${apiKey}",
+      "Content-Type"-> "application/json"
+    )
+    /*
+     * The request body specifies the query and
+     * respective range (all analyzers):
+     *
+     * {
+     *    "query" : {}, "range" : "all"
+     * }
+     */
+    val body = new JsonObject
+    body.add("query", new JsonObject)
+    body.addProperty("range", "all")
+    /*
+     * Send POST request to Cortex Server
+     * and extract the result (which is a
+     * JSON Array
+     */
+    val result = try {
+
+      val source = post(endpoint, headers, body.toString)
+      extractJsonBody(source).getAsJsonArray
+
+    } catch {
+      case _:Throwable => new JsonArray
+    }
+
+    if (result.isEmpty) return false
+    CortexRegistry.register(result)
+
+    true
+
+  }
 
   def close():Unit = ???
   /*
