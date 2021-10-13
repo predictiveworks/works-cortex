@@ -100,15 +100,68 @@ class CortexClient(cfg:Config) extends HttpConnect {
   }
 
   def close():Unit = ???
-  /*
+  /**
    * This method is used to validate whether the
    * provided user name & password exists. This is
    * used as an initial check.
    *
    * Most other request require authentication and
    * there the configured API_KEY must be used
+   *
+   * Note, all other request even with API_KEY run
+   * within an authenticated session
    */
-  def isLogin:Boolean = ???
+  def isLogin:Boolean = {
+
+    val endpoint = s"$baseUrl/login"
+
+    val user = cfg.getString("user")
+    val password = cfg.getString("password")
+
+    val headers = Map.empty[String,String]
+
+    val body = new JsonObject
+    body.addProperty("user", user)
+    body.addProperty("password", password)
+
+    val result = try {
+
+      val source = post(endpoint, headers, body.toString)
+      extractJsonBody(source).getAsJsonObject
+
+    } catch {
+      case _:Throwable => new JsonObject
+    }
+
+    if (result.keySet().isEmpty) return false
+
+    if (result.has("type")) {
+      /*
+       * We do not have to check whether the `type`
+       * parameter is specified as `AuthenticationError`
+       */
+      false
+
+    } else {
+
+      val name = result.get("name").getAsString
+      if (name != user) return false
+
+      val roles = result.get("roles")
+        .getAsJsonArray.map(_.getAsString)
+        .toList
+      /*
+       * Login is successful, if the configured user
+       * has the respective roles assigned to access
+       * the analyzer API.
+       */
+      if (roles.contains("analyze") || roles.contains("orgadmin"))
+        true
+
+      else false
+
+    }
+  }
   /**
    * This method allows a user with an `analyze` or `orgAdmin`
    * role to run analyzers on observables of different data
