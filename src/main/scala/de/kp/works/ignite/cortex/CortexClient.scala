@@ -20,6 +20,7 @@ package de.kp.works.ignite.cortex
 
 import com.google.gson._
 import com.typesafe.config.Config
+import de.kp.works.cortex.AnalyzerRegistry
 import de.kp.works.http.HttpConnect
 
 import scala.collection.JavaConversions._
@@ -93,7 +94,7 @@ class CortexClient(cfg:Config) extends HttpConnect {
     }
 
     if (result.isEmpty) return false
-    CortexRegistry.register(result)
+    AnalyzerRegistry.register(result)
 
     true
 
