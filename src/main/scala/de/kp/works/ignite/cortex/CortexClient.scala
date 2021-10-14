@@ -20,7 +20,7 @@ package de.kp.works.ignite.cortex
 
 import com.google.gson._
 import com.typesafe.config.Config
-import de.kp.works.cortex.AnalyzerRegistry
+import de.kp.works.cortex.analyzer.AnalyzerRegistry
 import de.kp.works.http.HttpConnect
 
 import scala.collection.JavaConversions._
@@ -65,7 +65,7 @@ class CortexClient(cfg:Config) extends HttpConnect {
      * API_KEY
      */
     val headers = Map(
-      "Authorization" -> s"Bearer ${apiKey}",
+      "Authorization" -> s"Bearer $apiKey",
       "Content-Type"-> "application/json"
     )
     /*
@@ -80,9 +80,8 @@ class CortexClient(cfg:Config) extends HttpConnect {
     body.add("query", new JsonObject)
     body.addProperty("range", "all")
     /*
-     * Send POST request to Cortex Server
-     * and extract the result (which is a
-     * JSON Array
+     * Send POST request to Cortex Server and extract
+     * the result (which is a JSON Array)
      */
     val result = try {
 
@@ -171,15 +170,60 @@ class CortexClient(cfg:Config) extends HttpConnect {
    * This request creates an analyzer job and returns the
    * respective job description
    */
-  def run:Unit = ???
+  def run(analyzerId:String, body:JsonObject):Unit = {
 
-  private def buildRequestBody(data:String, dataType:String):JsonObject = {
+    val endpoint = s"$baseUrl/analyzer/$analyzerId/run"
+    /*
+     * It is expected that the Cortex server determines
+     * the current user and its roles from the respective
+     * API_KEY
+     */
+    val headers = Map(
+      "Authorization" -> s"Bearer $apiKey",
+      "Content-Type"-> "application/json"
+    )
+    /*
+     * The current implement does not support file attachment.
+     *
+     * Example request body
+     * {
+     *  "data": "127.0.0.1",
+     *  "dataType": "ip",
+     *  "tlp": 2,
+     *  "message": "optional message",
+     *  "parameters": {
+     *    "optional parameters": "value"
+     *  }
+     *
+     * The default values (optionally provided)
+     *
+     * - tlp     : 2L
+     * - pap     : 2L
+     * - message : ""
+     * - force   : false
+     *
+     * Parameters are optional and refer to the
+     * selected analyzer
+     */
+    val analyzerJob = try {
+      /*
+       * Send POST request to Cortex Server and extract the
+       * result, which is the specification of the created
+       * analyzer job.
+       */
+      val source = post(endpoint, headers, body.toString)
+      extractJsonBody(source).getAsJsonObject
 
-    val body = new JsonObject
-
-    body.addProperty("data", data)
-    body.addProperty("dataType", dataType)
-    body
+    } catch {
+      case _:Throwable => new JsonObject
+    }
+    /*
+     * Finally send analyzer job to the Cortex job
+     * monitor service
+     */
+    publish(analyzerId, analyzerJob)
 
   }
+
+  private def publish(analyzer:String, job:JsonObject):Unit = ???
 }

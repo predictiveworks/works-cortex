@@ -1,4 +1,4 @@
-package de.kp.works.cortex
+package de.kp.works.cortex.analyzer
 /*
  * Copyright (c) 2019 - 2021 Dr. Krusche & Partner PartG. All rights reserved.
  *
@@ -64,10 +64,10 @@ object AnalyzerRegistry {
 
   }
 
-  def getByName(name:String): Option[Analyzer] =
+  def getByName(name: String): Option[Analyzer] =
     nameIndex.get(name)
 
-  def getByType(dataType:String):Option[Seq[Analyzer]] =
+  def getByType(dataType: String): Option[Seq[Analyzer]] =
     dataTypeIndex.get(dataType)
 
 }

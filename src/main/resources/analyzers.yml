@@ -1,0 +1,2834 @@
+author: Dr. Stefan Krusche
+created: 2021-10-15
+comment: Access specification of Cortex analyzers
+analyzers:
+  - name: AbuseIPDB
+    parameters:
+      - name: key
+        description: API key for AbuseIPDB
+        type: string
+        multi: false
+        required: true
+      - name: days
+        description: Check for IP Reports in the last X days
+        type: number
+        multi: false
+        required: false
+  - name: Abuse_Finder
+    parameters:
+  - name: AnyRun_Sandbox_Analysis
+    parameters:
+      - name: token
+        description: API token
+        type: string
+        multi: false
+        required: false
+      - name: privacy_type
+        description: Define the privacy setting (Allowed values = public, bylink, owner)
+        type: string
+        multi: false
+        required: true
+      - name: verify_ssl
+        description: Verify SSL certificate
+        type: boolean
+        multi: false
+        required: true
+  - name: Autofocus_GetSampleAnalysis
+    parameters:
+      - name: apikey
+        description: Autofocus API key
+        type: string
+        multi: false
+        required: true
+  - name: Autofocus_SearchIOC
+    parameters:
+      - name: apikey
+        description: Autofocus API key
+        type: string
+        multi: false
+        required: true
+  - name: Autofocus_SearchJSON
+    parameters:
+      - name: apikey
+        description: Autofocus API key
+        type: string
+        multi: false
+        required: true
+  - name: BackscatterIO_Enrichment
+    parameters:
+      - name: key
+        description: API key for Backscatter.io
+        type: string
+        multi: false
+        required: true
+  - name: BackscatterIO_GetObservations
+    parameters:
+      - name: key
+        description: API key for Backscatter.io
+        type: string
+        multi: false
+        required: true
+  - name: C1fApp
+    parameters:
+      - name: url
+        description: URL of C1fApp service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+  - name: CERTatPassiveDNS
+    parameters:
+      - name: limit
+        description: Define the maximum number of results per request
+        type: number
+        multi: false
+        required: true
+  - name: CIRCLHashlookup
+    parameters:
+  - name: CIRCLPassiveDNS
+    parameters:
+      - name: user
+        description: Username
+        type: string
+        multi: false
+        required: true
+      - name: password
+        description: Password
+        type: string
+        multi: false
+        required: true
+  - name: CIRCLPassiveSSL
+    parameters:
+      - name: user
+        description: Username
+        type: string
+        multi: false
+        required: true
+      - name: password
+        description: Password
+        type: string
+        multi: false
+        required: true
+  - name: Censys
+    parameters:
+      - name: uid
+        description: UID for Censys
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+  - name: ClamAV_FileInfo
+    parameters:
+  - name: Crt_sh_Transparency_Logs
+    parameters:
+  - name: CuckooSandbox_File_Analysis_Inet
+    parameters:
+      - name: url
+        description: URL
+        type: string
+        multi: false
+        required: true
+      - name: token
+        description: API token
+        type: string
+        multi: false
+        required: false
+      - name: verifyssl
+        description: Verify SSL certificate
+        type: boolean
+        multi: false
+        required: true
+      - name: cert_path
+        description: Path to the CA on the system used to check server certificate
+        type: string
+        multi: false
+        required: false
+  - name: CuckooSandbox_Url_Analysis
+    parameters:
+      - name: url
+        description: URL
+        type: string
+        multi: false
+        required: true
+      - name: token
+        description: API token
+        type: string
+        multi: false
+        required: false
+      - name: verifyssl
+        description: Verify SSL certificate
+        type: boolean
+        multi: false
+        required: true
+      - name: cert_path
+        description: Path to the CA on the system used to check server certificate
+        type: string
+        multi: false
+        required: false
+  - name: CyberChef_FromBase64
+    parameters:
+      - name: url
+        description: CyberChef Server URL
+        type: string
+        multi: false
+        required: true
+  - name: CyberChef_FromCharCode
+    parameters:
+      - name: url
+        description: CyberChef Server URL
+        type: string
+        multi: false
+        required: true
+  - name: CyberChef_FromHex
+    parameters:
+      - name: url
+        description: CyberChef Server URL
+        type: string
+        multi: false
+        required: true
+  - name: CyberCrime-Tracker
+    parameters:
+  - name: Cyberprotect_ThreatScore
+    parameters:
+  - name: DNSDB_DomainName
+    parameters:
+      - name: server
+        description: DNSDB server name
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Key
+        type: string
+        multi: false
+        required: true
+  - name: DNSDB_IPHistory
+    parameters:
+      - name: server
+        description: DNSDB server name
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Key
+        type: string
+        multi: false
+        required: true
+  - name: DNSDB_NameHistory
+    parameters:
+      - name: server
+        description: DNSDB server name
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Key
+        type: string
+        multi: false
+        required: true
+  - name: DNSSinkhole
+    parameters:
+      - name: ip
+        description: Define the DNS Sinkhole Server IP
+        type: string
+        multi: false
+        required: true
+      - name: sink_ip
+        description: Define the sinkholed response address IP
+        type: string
+        multi: false
+        required: true
+  - name: DNS_Lookingglass
+    parameters:
+  - name: DShield_lookup
+    parameters:
+  - name: Diario_GetReport
+    parameters:
+      - name: client_id
+        description: Client id for Diario
+        type: string
+        multi: false
+        required: true
+      - name: secret
+        description: Secret for Diario
+        type: string
+        multi: false
+        required: true
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+  - name: Diario_Scan
+    parameters:
+      - name: client_id
+        description: Client id for Diario
+        type: string
+        multi: false
+        required: true
+      - name: secret
+        description: Secret for Diario
+        type: string
+        multi: false
+        required: true
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+  - name: DomainMailSPFDMARC_Analyzer
+    parameters:
+  - name: DomainToolsIris_Investigate
+    parameters:
+      - name: username
+        description: DomainTools Iris API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools Iris API credentials
+        type: string
+        multi: false
+        required: true
+      - name: pivot_count_threshold
+        description: Pivot count threshold.
+        type: number
+        multi: false
+        required: false
+  - name: DomainToolsIris_Pivot
+    parameters:
+      - name: username
+        description: DomainTools Iris API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools Iris API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_HostingHistory
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_Reputation
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_ReverseIP
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_ReverseIPWhois
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_ReverseNameServer
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_ReverseWhois
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_Risk
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_WhoisHistory
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_WhoisLookup
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: DomainTools_WhoisLookupUnparsed
+    parameters:
+      - name: username
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: DomainTools API credentials
+        type: string
+        multi: false
+        required: true
+  - name: Elasticsearch_Analysis
+    parameters:
+      - name: endpoints
+        description: Define the Elasticsearch endpoints
+        type: string
+        multi: true
+        required: true
+      - name: keys
+        description: Set the Elasticsearch api keys for each endpoint. Note = Use api key or basic auth, but not both.
+        type: string
+        multi: true
+        required: false
+      - name: users
+        description: Set the Elasticsearch users for each endpoint. Note = Use api key or basic auth, but not both.
+        type: string
+        multi: true
+        required: false
+      - name: passwords
+        description: Set the Elasticsearch passwords for each endpoint. Note = Use api key or basic auth, but not both.
+        type: string
+        multi: true
+        required: false
+      - name: kibana
+        description: Define the kibana address
+        type: string
+        multi: false
+        required: false
+      - name: dashboard
+        description: Set the kibana dashboard id that will be linked in the report
+        type: string
+        multi: false
+        required: false
+      - name: index
+        description: Define the Elasticsearch indices to use
+        type: string
+        multi: true
+        required: true
+      - name: field
+        description: Define the fields to query
+        type: string
+        multi: true
+        required: true
+      - name: size
+        description: Define the number of hits per index to return
+        type: string
+        multi: false
+        required: true
+      - name: verifyssl
+        description: Verify SSL certificate
+        type: boolean
+        multi: false
+        required: true
+      - name: cert_path
+        description: Path to the CA on the system used to check server certificate
+        type: string
+        multi: false
+        required: false
+  - name: EmailRep
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: false
+  - name: EmergingThreats_DomainInfo
+    parameters:
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+  - name: EmergingThreats_IPInfo
+    parameters:
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+  - name: EmergingThreats_MalwareInfo
+    parameters:
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+  - name: EmlParser
+    parameters:
+      - name: email_visualisation
+        description: Enable email visualisation in report. This option requires the program `wkhtmltoimage` and installation of `wkhtmltopdf` package on the system. Docker image has this program installed. Refer to the documentation for more information. 
+        type: boolean
+        multi: false
+        required: true
+      - name: wkhtmltoimage_path
+        description: Path of wkhtmltoimage program on the system. This program is required to generate visualisation of the message as it seen in mail client program. If using Docker image, use default configuration.
+        type: string
+        multi: false
+        required: true
+  - name: FileInfo
+    parameters:
+      - name: manalyze_enable
+        description: Wether to enable manalyze submodule or not.
+        type: boolean
+        multi: false
+        required: true
+      - name: manalyze_enable_docker
+        description: Use docker to run Manalyze. Can be used only if not using the docker image of FileInfo
+        type: boolean
+        multi: false
+        required: false
+      - name: manalyze_enable_binary
+        description: Use local binary to run Manalyze. Need to compile it before!
+        type: boolean
+        multi: false
+        required: false
+      - name: manalyze_binary_path
+        description: Path to the Manalyze binary that was compiled before. Keep the default value if using the docker image of FileInfo 
+        type: string
+        multi: false
+        required: false
+      - name: floss_enable
+        description: Enable the use of FireEye FLARE FLOSS
+        type: boolean
+        multi: false
+        required: false
+      - name: floss_binary_path
+        description: Path to the FLOSS binary.
+        type: string
+        multi: false
+        required: false
+      - name: floss_minimal_string_length
+        description: Length of strings must be in order to be considered.
+        type: number
+        multi: false
+        required: false
+  - name: FireEyeiSight
+    parameters:
+      - name: key
+        description: API key for FireEye iSIGHT.
+        type: string
+        multi: false
+        required: true
+      - name: pwd
+        description: Password associated to the API key.
+        type: string
+        multi: false
+        required: true
+  - name: FireHOLBlocklists
+    parameters:
+      - name: blocklistpath
+        description: Path to blocklists
+        type: string
+        multi: false
+        required: true
+  - name: ForcepointWebsensePing
+    parameters:
+      - name: hostname
+        description: Forcepoint remote Filtering Service
+        type: string
+        multi: false
+        required: true
+      - name: timeout
+        description: WebsensePing timeout-secs
+        type: number
+        multi: false
+        required: true
+      - name: path
+        description: WebsensePing path
+        type: string
+        multi: false
+        required: true
+      - name: malicious_categories
+        description: List of Forcepoint categories to be considered as malicious
+        type: string
+        multi: true
+        required: true
+      - name: suspicious_categories
+        description: List of Forcepoint categories you would consider as suspicious
+        type: string
+        multi: true
+        required: true
+      - name: safe_categories
+        description: List of Forcepoint categories you would consider as safe
+        type: string
+        multi: true
+        required: true
+  - name: Fortiguard_URLCategory
+    parameters:
+      - name: malicious_categories
+        description: List of FortiGuard categories to be considered as malicious
+        type: string
+        multi: true
+        required: true
+      - name: suspicious_categories
+        description: List of FortiGuard categories to be considered as suspicious
+        type: string
+        multi: true
+        required: true
+  - name: GRR
+    parameters:
+      - name: url
+        description: URL of the GRR API.
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: API user to use
+        type: string
+        multi: false
+        required: true
+      - name: password
+        description: API password to the API user
+        type: string
+        multi: false
+        required: true
+  - name: GoogleDNS_resolve
+    parameters:
+  - name: GoogleSafebrowsing
+    parameters:
+      - name: client_id
+        description: Client identifier
+        type: string
+        multi: false
+        required: false
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: false
+  - name: GoogleVisionAPI_WebDetection
+    parameters:
+      - name: api_key
+        description: API key for this service
+        type: string
+        multi: false
+        required: true
+      - name: max_result
+        description: Maximum number of url to fetch
+        type: string
+        multi: false
+        required: false
+  - name: GreyNoise
+    parameters:
+      - name: key
+        description: API key for GreyNoise
+        type: string
+        multi: false
+        required: false
+      - name: api_type
+        description: API Type to Match Key, either 'enterprise' or 'community'
+        type: string
+        multi: false
+        required: false
+  - name: HIBP_Query
+    parameters:
+      - name: unverified
+        description: Include unverified breaches
+        type: boolean
+        multi: false
+        required: true
+      - name: truncate
+        description: Truncated response means only the name of data breaches
+        type: boolean
+        multi: false
+        required: true
+      - name: api_key
+        description: Api key for hibp
+        type: string
+        multi: false
+        required: true
+      - name: retries
+        description: Retries to request api while getting status code 429
+        type: number
+        multi: false
+        required: false
+  - name: Hashdd_Detail
+    parameters:
+      - name: api_key
+        description: API key for hashdd
+        type: string
+        multi: false
+        required: true
+  - name: Hashdd_Status
+    parameters:
+      - name: api_key
+        description: API key for hashdd
+        type: string
+        multi: false
+        required: false
+  - name: HippoMore
+    parameters:
+      - name: url
+        description: URL of the service
+        type: string
+        multi: false
+        required: true
+  - name: Hipposcore
+    parameters:
+      - name: url
+        description: URL of the service
+        type: string
+        multi: false
+        required: true
+  - name: Hunterio_DomainSearch
+    parameters:
+      - name: key
+        description: api key of hunter.io
+        type: string
+        multi: false
+        required: true
+  - name: HybridAnalysis_GetReport
+    parameters:
+      - name: secret
+        description: HybridAnalysis secret
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+  - name: IBMXForce_Lookup
+    parameters:
+      - name: url
+        description: X-Force API URL
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: X-Force API Key
+        type: string
+        multi: false
+        required: true
+      - name: pwd
+        description: X-Force API Password
+        type: string
+        multi: false
+        required: true
+      - name: verify
+        description: Enable/Disable certificate verification
+        type: boolean
+        multi: false
+        required: false
+  - name: IPVoid
+    parameters:
+      - name: key
+        description: API key for IPVoid
+        type: string
+        multi: false
+        required: true
+  - name: IPinfo_Details
+    parameters:
+      - name: api_key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: IPinfo_Hosted_Domains
+    parameters:
+      - name: api_key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: IVRE
+    parameters:
+      - name: use_data
+        description: Use data from the data purpose (MaxMind)
+        type: boolean
+        multi: false
+        required: true
+      - name: use_passive
+        description: Use data from the passive purpose
+        type: boolean
+        multi: false
+        required: true
+      - name: use_scans
+        description: Use data from the scans (nmap) purpose
+        type: boolean
+        multi: false
+        required: true
+      - name: db_url
+        description: The URL of the IVRE database (e.g., mongodb =//host/ivre or http =//host/cgi); defaults to using IVRE's configuration
+        type: string
+        multi: false
+        required: false
+      - name: db_url_data
+        description: The URL of the IVRE database for the data purpose (e.g., maxmind =///usr/share/ivre/geoip or http =//host/cgi); defaults to using IVRE's configuration
+        type: string
+        multi: false
+        required: false
+      - name: db_url_passive
+        description: The URL of the IVRE database for the passive purpose (e.g., mongodb =//host/ivre or http =//host/cgi); defaults to using IVRE's configuration
+        type: string
+        multi: false
+        required: false
+      - name: db_url_scans
+        description: The URL of the IVRE database for the scans (nmap) purpose (e.g., mongodb =//host/ivre or http =//host/cgi); defaults to using IVRE's configuration
+        type: string
+        multi: false
+        required: false
+  - name: Inoitsu
+    parameters:
+  - name: IntezerCommunity
+    parameters:
+      - name: key
+        description: API key for Intezer
+        type: string
+        multi: false
+        required: true
+  - name: Investigate_Categorization
+    parameters:
+      - name: key
+        description: Define the Investigate API Key
+        type: string
+        multi: false
+        required: true
+  - name: Investigate_Sample
+    parameters:
+      - name: key
+        description: Define the Investigate API Key
+        type: string
+        multi: false
+        required: true
+  - name: JoeSandbox_File_Analysis_Inet
+    parameters:
+      - name: url
+        description: URL of JoeSandbox service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+      - name: analysistimeout
+        description: Analysis timeout (seconds)
+        type: number
+        multi: false
+        required: true
+      - name: networktimeout
+        description: Network timeout (second)
+        type: number
+        multi: false
+        required: true
+  - name: JoeSandbox_File_Analysis_Noinet
+    parameters:
+      - name: url
+        description: URL of JoeSandbox service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+      - name: analysistimeout
+        description: Analysis timeout (seconds)
+        type: number
+        multi: false
+        required: true
+      - name: networktimeout
+        description: Network timeout (second)
+        type: number
+        multi: false
+        required: true
+  - name: JoeSandbox_Url_Analysis
+    parameters:
+      - name: url
+        description: URL of JoeSandbox service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+      - name: analysistimeout
+        description: Analysis timeout (seconds)
+        type: number
+        multi: false
+        required: true
+      - name: networktimeout
+        description: Network timeout (second)
+        type: number
+        multi: false
+        required: true
+  - name: LastInfoSec
+    parameters:
+      - name: apiKey
+        description: LastInfoSec Api Key
+        type: string
+        multi: false
+        required: true
+  - name: Ldap_Query
+    parameters:
+      - name: LDAP_address
+        description: Should contain the protocol. Eg = ldaps =//myldap.myorg.com
+        type: string
+        multi: false
+        required: true
+      - name: LDAP_port
+        description: Should contain the ldap port. Eg = 389 or 636
+        type: string
+        multi: false
+        required: true
+      - name: LDAP_username
+        description: Usernae of the account that will be used to bind to LDAP server. The Account should have permissions to read ldap objects and attributes.
+        type: string
+        multi: false
+        required: true
+      - name: LDAP_password
+        description: Password of the account used to bind to LDAP server.
+        type: string
+        multi: false
+        required: true
+      - name: base_DN
+        description: The base DN to use in your LDAP. Eg = dc=myorg,dc=com
+        type: string
+        multi: false
+        required: true
+      - name: uid_search_field
+        description: Specify here the field to use when searching by username. Eg = uid or sAMAccountName
+        type: string
+        multi: false
+        required: true
+      - name: attributes
+        description: Specify here the attributes you want to harvest. Eg = mail
+        type: string
+        multi: true
+        required: true
+  - name: MISP
+    parameters:
+      - name: name
+        description: Name of MISP servers
+        type: string
+        multi: true
+        required: false
+      - name: url
+        description: URL of MISP servers
+        type: string
+        multi: true
+        required: true
+      - name: key
+        description: API key for each server
+        type: string
+        multi: true
+        required: true
+      - name: cert_check
+        description: Verify server certificate
+        type: boolean
+        multi: false
+        required: true
+      - name: cert_path
+        description: Path to the CA on the system used to check server certificate
+        type: string
+        multi: true
+        required: false
+  - name: MISPWarningLists
+    parameters:
+      - name: path
+        description: path to Warninglists folder
+        type: string
+        multi: false
+        required: false
+      - name: conn
+        description: sqlalchemy connection string
+        type: string
+        multi: false
+        required: false
+  - name: Malpedia
+    parameters:
+      - name: path
+        description: Rulepath
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: Username
+        type: string
+        multi: false
+        required: true
+      - name: password
+        description: Password
+        type: string
+        multi: false
+        required: true
+  - name: Maltiverse_Report
+    parameters:
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+  - name: MalwareBazaar
+    parameters:
+      - name: api_key
+        description: MalwareBazaar api key
+        type: string
+        multi: false
+        required: true
+  - name: MalwareClustering_Search
+    parameters:
+      - name: n4j_host
+        description: Neo4j server host
+        type: string
+        multi: false
+        required: true
+      - name: n4j_port
+        description: Neo4j server port
+        type: number
+        multi: false
+        required: true
+      - name: n4j_user
+        description: Neo4j server user
+        type: string
+        multi: false
+        required: true
+      - name: n4j_pwd
+        description: Neo4j server password
+        type: string
+        multi: false
+        required: true
+      - name: threshold
+        description: ApiScout correlation threshold
+        type: string
+        multi: false
+        required: true
+  - name: Malwares_GetReport
+    parameters:
+      - name: key
+        description: Malwares.com API Key
+        type: string
+        multi: false
+        required: true
+  - name: Malwares_Scan
+    parameters:
+      - name: key
+        description: Malwares.com API Key
+        type: string
+        multi: false
+        required: true
+  - name: MaxMind_GeoIP
+    parameters:
+  - name: MetaDefenderCloud_GetReport
+    parameters:
+      - name: key
+        description: API key for MetaDefender
+        type: string
+        multi: false
+        required: true
+      - name: url
+        description: url address for MetaDefender server
+        type: string
+        multi: false
+        required: true
+  - name: MetaDefenderCloud_Reputation
+    parameters:
+      - name: key
+        description: API key for MetaDefender
+        type: string
+        multi: false
+        required: true
+      - name: url
+        description: url address for MetaDefender server
+        type: string
+        multi: false
+        required: true
+  - name: MetaDefenderCloud_Scan
+    parameters:
+      - name: key
+        description: API key for MetaDefender
+        type: string
+        multi: false
+        required: true
+      - name: url
+        description: url address for MetaDefender server
+        type: string
+        multi: false
+        required: true
+      - name: polling
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+  - name: MetaDefenderCore_GetReport
+    parameters:
+      - name: key
+        description: API key for MetaDefender
+        type: string
+        multi: false
+        required: true
+      - name: url
+        description: url address for MetaDefender server
+        type: string
+        multi: false
+        required: true
+  - name: MetaDefenderCore_Scan
+    parameters:
+      - name: key
+        description: API key for MetaDefender
+        type: string
+        multi: false
+        required: true
+      - name: url
+        description: url address for MetaDefender server
+        type: string
+        multi: false
+        required: true
+      - name: polling
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+  - name: Mnemonic_pDNS_Closed
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: Mnemonic_pDNS_Public
+    parameters:
+  - name: Msg_Parser
+    parameters:
+  - name: NERD
+    parameters:
+      - name: key
+        description: API key
+        type: string
+        multi: false
+        required: true
+      - name: url
+        description: Base URL of the NERD instance
+        type: string
+        multi: false
+        required: false
+  - name: NSRL
+    parameters:
+      - name: conn
+        description: sqlalchemy connection string
+        type: string
+        multi: false
+        required: false
+      - name: grep_path
+        description: path of grep
+        type: string
+        multi: false
+        required: false
+      - name: nsrl_folder
+        description: path of NSRL folder
+        type: string
+        multi: false
+        required: false
+  - name: Nessus
+    parameters:
+      - name: url
+        description: Define the URL to the Nessus service
+        type: string
+        multi: false
+        required: true
+      - name: login
+        description: Define the login to Nessus
+        type: string
+        multi: false
+        required: true
+      - name: password
+        description: Define the password to the Nessus account
+        type: string
+        multi: false
+        required: true
+      - name: policy
+        description: Define the policy used to run scans
+        type: string
+        multi: false
+        required: true
+      - name: ca_bundle
+        description: Define the path to the Nessus CA
+        type: string
+        multi: false
+        required: false
+      - name: allowed_network
+        description: Define networks allowed to be scanned
+        type: string
+        multi: true
+        required: true
+  - name: OTXQuery
+    parameters:
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: Onyphe_Summary
+    parameters:
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: verbose_taxonomies
+        description: Set true if you want detailed taxonomies for port, subnet, geoloc, domain
+        type: boolean
+        multi: false
+        required: true
+  - name: OpenCTI_SearchExactObservable
+    parameters:
+      - name: name
+        description: Name of OpenCTI servers
+        type: string
+        multi: true
+        required: false
+      - name: url
+        description: URL of OpenCTI servers
+        type: string
+        multi: true
+        required: true
+      - name: key
+        description: API key for each server
+        type: string
+        multi: true
+        required: true
+      - name: cert_check
+        description: Verify server certificate
+        type: boolean
+        multi: false
+        required: true
+  - name: OpenCTI_SearchObservables
+    parameters:
+      - name: name
+        description: Name of OpenCTI servers
+        type: string
+        multi: true
+        required: false
+      - name: url
+        description: URL of OpenCTI servers
+        type: string
+        multi: true
+        required: true
+      - name: key
+        description: API key for each server
+        type: string
+        multi: true
+        required: true
+      - name: cert_check
+        description: Verify server certificate
+        type: boolean
+        multi: false
+        required: true
+  - name: PassiveTotal_Components
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Enrichment
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Host_Pairs
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Malware
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Osint
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Passive_Dns
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Ssl_Certificate_Details
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Ssl_Certificate_History
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Trackers
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Unique_Resolutions
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: PassiveTotal_Whois_Details
+    parameters:
+      - name: username
+        description: Define the username of the account used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: Patrowl_GetReport
+    parameters:
+      - name: url
+        description: Define the PatrOwl url
+        type: string
+        multi: false
+        required: true
+      - name: api_key
+        description: Define the PatrOwl API Key
+        type: string
+        multi: false
+        required: true
+  - name: PayloadSecurity_File_Analysis
+    parameters:
+      - name: url
+        description: Define the url of the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: secret
+        description: Define the secret used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: environmentId
+        description: Define the environment Id used by the service
+        type: number
+        multi: false
+        required: true
+      - name: timeout
+        description: Define the timeout of requests to the service
+        type: number
+        multi: false
+        required: true
+      - name: verifyssl
+        description: Verify SSL certificate
+        type: boolean
+        multi: false
+        required: true
+  - name: PayloadSecurity_Url_Analysis
+    parameters:
+      - name: url
+        description: Define the url of the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: secret
+        description: Define the secret used to connect the service
+        type: string
+        multi: false
+        required: true
+      - name: environmentId
+        description: Define the environment Id used by the service
+        type: number
+        multi: false
+        required: true
+      - name: timeout
+        description: Define the timeout of requests to the service
+        type: number
+        multi: false
+        required: true
+      - name: verifyssl
+        description: Verify SSL certificate
+        type: boolean
+        multi: false
+        required: true
+  - name: PhishTank_CheckURL
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: PhishingInitiative_Lookup
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: PhishingInitiative_Scan
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: ProofPoint_Lookup
+    parameters:
+      - name: url
+        description: URL of the Proofpoint API, the default should be okay.
+        type: string
+        multi: false
+        required: true
+      - name: apikey
+        description: API key to use
+        type: string
+        multi: false
+        required: true
+      - name: secret
+        description: Secret to the API key
+        type: string
+        multi: false
+        required: true
+      - name: verifyssl
+        description: Verify server's SSL certificate
+        type: boolean
+        multi: false
+        required: false
+  - name: Pulsedive_GetIndicator
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: RecordedFuture_risk
+    parameters:
+      - name: key
+        description: API key for RecordedFuture
+        type: string
+        multi: false
+        required: true
+  - name: Robtex_Forward_PDNS_Query
+    parameters:
+  - name: Robtex_IP_Query
+    parameters:
+  - name: Robtex_Reverse_PDNS_Query
+    parameters:
+  - name: SEKOIAIntelligenceCenter_Context
+    parameters:
+      - name: api_key
+        description: Intelligence center API key
+        type: string
+        multi: false
+        required: true
+      - name: url
+        description: Intelligence center URL
+        type: string
+        multi: false
+        required: false
+  - name: SEKOIAIntelligenceCenter_Indicators
+    parameters:
+      - name: api_key
+        description: Intelligence center API key
+        type: string
+        multi: false
+        required: true
+      - name: url
+        description: Intelligence center URL
+        type: string
+        multi: false
+        required: false
+  - name: SecurityTrails_Passive_DNS
+    parameters:
+      - name: api_key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: SecurityTrails_Whois
+    parameters:
+      - name: api_key
+        description: Define the API key to use to connect the service
+        type: string
+        multi: false
+        required: true
+  - name: Shodan_DNSResolve
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: Shodan_Host
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: Shodan_Host_History
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: Shodan_InfoDomain
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: Shodan_ReverseDNS
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: Shodan_Search
+    parameters:
+      - name: key
+        description: Define the API Key
+        type: string
+        multi: false
+        required: true
+  - name: SinkDB
+    parameters:
+      - name: key
+        description: Define the HTTPS API Key
+        type: string
+        multi: false
+        required: true
+  - name: SoltraEdge
+    parameters:
+      - name: token
+        description: Define the Token Key
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: Define the Username
+        type: string
+        multi: false
+        required: true
+      - name: base_url
+        description: Base API URL for Soltra Edge Server. (Example = https =//test.soltra.com/api/stix)
+        type: string
+        multi: false
+        required: true
+      - name: verify_ssl
+        description: Verify server certificate
+        type: boolean
+        multi: false
+        required: true
+  - name: SophosIntelix_GetReport
+    parameters:
+      - name: clientID
+        description: Client ID for Sophos Labs Intelix
+        type: string
+        multi: false
+        required: true
+      - name: clientSecret
+        description: Client Secret for Sophos Labs Intelix
+        type: string
+        multi: false
+        required: true
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+  - name: SophosIntelix_Submit_Dynamic
+    parameters:
+      - name: clientID
+        description: Client ID for Sophos Labs Intelix
+        type: string
+        multi: false
+        required: true
+      - name: clientSecret
+        description: Client Secret for Sophos Labs Intelix
+        type: string
+        multi: false
+        required: true
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+  - name: SophosIntelix_Submit_Static
+    parameters:
+      - name: clientID
+        description: Client ID for Sophos Labs Intelix
+        type: string
+        multi: false
+        required: true
+      - name: clientSecret
+        description: Client Secret for Sophos Labs Intelix
+        type: string
+        multi: false
+        required: true
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+  - name: SpamAssassin
+    parameters:
+      - name: url
+        description: SpamAssassin url
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: SpamAssassin port
+        type: number
+        multi: false
+        required: true
+      - name: spam_score
+        description: Minimum score to consider mail as spam
+        type: number
+        multi: false
+        required: false
+      - name: timeout
+        description: Timout for socket operations in seconds
+        type: number
+        multi: false
+        required: false
+  - name: SpamhausDBL
+    parameters:
+  - name: Splunk_Search_Domain_FQDN
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_File_Filename
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_Hash
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_IP
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_Mail_Email
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_Mail_Subject
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_Other
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_Registry
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_URL_URI_Path
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_User
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: Splunk_Search_User_Agent
+    parameters:
+      - name: host
+        description: Splunk API host or IP
+        type: string
+        multi: false
+        required: true
+      - name: port
+        description: Splunk API port
+        type: string
+        multi: false
+        required: true
+      - name: port_gui
+        description: Splunk GUI port
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: User account used for searches
+        type: string
+        multi: false
+        required: false
+      - name: password
+        description: User password of the previous mentionned account
+        type: string
+        multi: false
+        required: false
+      - name: application
+        description: Spunk application in which the saved searches are stored
+        type: string
+        multi: false
+        required: true
+      - name: owner
+        description: Username that corresponds to the owner of the saved searches
+        type: string
+        multi: false
+        required: true
+      - name: saved_searches
+        description: Name of the saved searches to use
+        type: string
+        multi: true
+        required: true
+      - name: earliest_time
+        description: If not empty, this will set the earliest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: latest_time
+        description: If not empty, this will set the latest time of the searches
+        type: string
+        multi: false
+        required: false
+      - name: max_count
+        description: Maximum number of results to return for a search
+        type: number
+        multi: false
+        required: false
+  - name: StamusNetworks_HostID
+    parameters:
+      - name: url
+        description: Base URL of Scirius Security Platform
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: API key for Scirius Security Platform
+        type: string
+        multi: false
+        required: true
+      - name: ssl_verify
+        description: Verify TLS certificate when connection to Scirius Security Platform
+        type: boolean
+        multi: false
+        required: true
+      - name: tenant
+        description: Tenant value for organization in Scirius Security Platform
+        type: string
+        multi: false
+        required: false
+  - name: StaxxSearch
+    parameters:
+      - name: auth_url
+        description: Define the URL of the auth endpoint
+        type: string
+        multi: false
+        required: true
+      - name: query_url
+        description: Define the URL of the intelligence endpoint
+        type: string
+        multi: false
+        required: true
+      - name: username
+        description: STAXX User Name
+        type: string
+        multi: false
+        required: true
+      - name: password
+        description: STAXX Password
+        type: string
+        multi: false
+        required: true
+      - name: cert_check
+        description: Verify server certificate
+        type: boolean
+        multi: false
+        required: true
+      - name: cert_path
+        description: Path to the CA on the system used to check the server certificate
+        type: string
+        multi: true
+        required: false
+  - name: StopForumSpam
+    parameters:
+      - name: suspicious_confidence_level
+        description: Confidence threshold above which the artifact should be marked as suspicious
+        type: number
+        multi: false
+        required: false
+      - name: malicious_confidence_level
+        description: Confidence threshold above which the artifact should be marked as malicious
+        type: number
+        multi: false
+        required: false
+  - name: THOR_Thunderstorm_ScanSample
+    parameters:
+      - name: thunderstorm_server
+        description: Thunderstorm Server
+        type: string
+        multi: false
+        required: true
+      - name: thunderstorm_port
+        description: Thunderstorm Port
+        type: number
+        multi: false
+        required: true
+      - name: thunderstorm_source
+        description: Source System
+        type: string
+        multi: false
+        required: false
+      - name: thunderstorm_ssl
+        description: Use an SSL encrypted HTTP connection
+        type: boolean
+        multi: false
+        required: false
+      - name: thunderstorm_ssl_verify
+        description: Verify the SSL certificate of the remote service
+        type: boolean
+        multi: false
+        required: false
+  - name: TalosReputation
+    parameters:
+  - name: TeamCymruMHR
+    parameters:
+  - name: ThreatGrid
+    parameters:
+      - name: tg_host
+        description: Threat Grid Host
+        type: string
+        multi: false
+        required: true
+      - name: api_key
+        description: Threat Grid API Key
+        type: string
+        multi: false
+        required: true
+  - name: ThreatResponse
+    parameters:
+      - name: region
+        description: Threat Response Region (us, eu, or apjc). Will default to 'us' region if left blank
+        type: string
+        multi: false
+        required: false
+      - name: client_id
+        description: Threat Response Client ID
+        type: string
+        multi: false
+        required: true
+      - name: client_password
+        description: Threat Response API Client Password
+        type: string
+        multi: false
+        required: true
+      - name: extract_amp_targets
+        description: Would you like to extract AMP connector GUIDs as artifacts?
+        type: boolean
+        multi: false
+        required: false
+  - name: Threatcrowd
+    parameters:
+  - name: TorBlutmagie
+    parameters:
+      - name: cache.duration
+        description: Define the cache duration
+        type: number
+        multi: false
+        required: true
+      - name: cache.root
+        description: Define the path to the stored data
+        type: string
+        multi: false
+        required: false
+  - name: TorProject
+    parameters:
+      - name: ttl
+        description: Define the TTL
+        type: number
+        multi: false
+        required: true
+      - name: cache.duration
+        description: Define the cache duration
+        type: number
+        multi: false
+        required: true
+      - name: cache.root
+        description: Define the path to the stored data
+        type: string
+        multi: false
+        required: false
+  - name: Triage
+    parameters:
+      - name: api_key
+        description: API key
+        type: string
+        multi: false
+        required: true
+      - name: timeout
+        description: Sandbox run timeout in seconds (default = 200)
+        type: string
+        multi: false
+        required: false
+      - name: zip_pw
+        description: Zip archive password
+        type: string
+        multi: false
+        required: false
+  - name: URLhaus
+    parameters:
+  - name: Umbrella_Report
+    parameters:
+      - name: api_key
+        description: Api Key provided by Umbrella Admin Console.
+        type: string
+        multi: false
+        required: true
+      - name: api_secret
+        description: Api Secret provided by Umbrella Admin Console.
+        type: string
+        multi: false
+        required: true
+      - name: organization_id
+        description: Organization ID provided by Umbrella Admin Console.
+        type: string
+        multi: false
+        required: true
+      - name: query_limit
+        description: Maximum number of results to return.
+        type: number
+        multi: false
+        required: false
+  - name: UnshortenLink
+    parameters:
+  - name: Urlscan.io_Scan
+    parameters:
+      - name: key
+        description: API key for Urlscan.io
+        type: string
+        multi: false
+        required: true
+  - name: Urlscan.io_Search
+    parameters:
+  - name: VMRay
+    parameters:
+      - name: url
+        description: Define the URL of the service
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key
+        type: string
+        multi: false
+        required: true
+      - name: certverify
+        description: Verify certificates
+        type: boolean
+        multi: false
+        required: false
+      - name: certpath
+        description: Path to certificate file, in case of self-signed etc.
+        type: string
+        multi: false
+        required: false
+      - name: verdict_only
+        description: If set to true, only the verdict (or the score for VMRay versions < 4.0) will be added as labels.
+        type: boolean
+        multi: false
+        required: false
+      - name: query_retry_wait
+        description: The amount of seconds to wait before trying to fetch the results.
+        type: number
+        multi: false
+        required: false
+      - name: recursive_sample_limit
+        description: The maximum amount of recursive samples which will be analyzed. 0 disables recursion.
+        type: number
+        multi: false
+        required: false
+      - name: reanalyze
+        description: If set to true, known samples will be re-analyzed on submission. This is enabled by default.
+        type: boolean
+        multi: false
+        required: false
+      - name: shareable
+        description: If set to true, the hash of the sample will be shared with VirusTotal if the TLP level is white or green.
+        type: boolean
+        multi: false
+        required: false
+      - name: archive_password
+        description: The password that will be used to extract archives.
+        type: string
+        multi: false
+        required: true
+      - name: archive_compound_sample
+        description: If set to true, files inside archives are treated as a single, compound sample. Otherwise, each file is treated as its own sample.
+        type: boolean
+        multi: false
+        required: true
+      - name: max_jobs
+        description: Limits the amount of jobs that can be created by jobrules for a submission.
+        type: number
+        multi: false
+        required: false
+      - name: enable_reputation
+        description: If set to true, reputation lookups will be performed for submitted samples and analysis artifacts (file hash and URL lookups) by the VMRay cloud reputation service and additional third party services. The user analyzer setting is used as default value for this parameter.
+        type: boolean
+        multi: false
+        required: false
+      - name: enable_whois
+        description: If set to true, domains seen during analyses are queried with external WHOIS service. The user analyzer setting is used as default value for this parameter.
+        type: boolean
+        multi: false
+        required: false
+      - name: analyzer_mode
+        description: Specifies which types of analyzers will be used for analyzing this sample. Supported strings are 'reputation', 'reputation_static', 'reputation_static_dynamic', 'static_dynamic', and 'static'. The user analyzer setting is used as default value for this parameter.
+        type: string
+        multi: false
+        required: false
+      - name: known_malicious
+        description: If set to true, triage will be used to pre-filter known malicious samples by results of reputation lookup (if allowed) and static analysis. The user analyzer setting is used as default value for this parameter.
+        type: boolean
+        multi: false
+        required: false
+      - name: known_benign
+        description: If set to true, triage will be used to pre-filter known benign samples by results of reputation lookup (if allowed) and static analysis. The user analyzer setting is used as default value for this parameter.
+        type: boolean
+        multi: false
+        required: false
+      - name: tags
+        description: Tags to attach to the sample.
+        type: string
+        multi: true
+        required: false
+      - name: timeout
+        description: Analysis timeout in seconds.
+        type: number
+        multi: false
+        required: false
+      - name: net_scheme_name
+        description: Name of the network schema.
+        type: string
+        multi: false
+        required: false
+  - name: Valhalla_GetRuleMatches
+    parameters:
+      - name: key
+        description: API key for Valhalla
+        type: string
+        multi: false
+        required: true
+  - name: VirusTotal_DownloadSample
+    parameters:
+      - name: key
+        description: API private key for Virustotal
+        type: string
+        multi: false
+        required: true
+  - name: VirusTotal_GetReport
+    parameters:
+      - name: key
+        description: API key for Virustotal
+        type: string
+        multi: false
+        required: true
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+      - name: rescan_hash_older_than_days
+        description: Rescan hash observable if report is older than selected days
+        type: number
+        multi: false
+        required: false
+      - name: highlighted_antivirus
+        description: Add taxonomy if selected AV don't recognize observable
+        type: string
+        multi: true
+        required: false
+      - name: download_sample
+        description: Download automatically sample as observable when looking for hash
+        type: boolean
+        multi: false
+        required: false
+      - name: download_sample_if_highlighted
+        description: Download automatically sample as observable if highlighted antivirus didn't recognize
+        type: boolean
+        multi: false
+        required: false
+  - name: VirusTotal_Rescan
+    parameters:
+      - name: key
+        description: API key for Virustotal
+        type: string
+        multi: false
+        required: true
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+      - name: highlighted_antivirus
+        description: Add taxonomy if selected AV don't recognize observable
+        type: string
+        multi: true
+        required: false
+      - name: download_sample
+        description: Download automatically sample as observable when looking for hash
+        type: boolean
+        multi: false
+        required: false
+      - name: download_sample_if_highlighted
+        description: Download automatically sample as observable if highlighted antivirus didn't recognize
+        type: boolean
+        multi: false
+        required: false
+  - name: VirusTotal_Scan
+    parameters:
+      - name: key
+        description: API key for Virustotal
+        type: string
+        multi: false
+        required: true
+      - name: polling_interval
+        description: Define time interval between two requests attempts for the report
+        type: number
+        multi: false
+        required: false
+      - name: highlighted_antivirus
+        description: Add taxonomy if selected AV don't recognize observable
+        type: string
+        multi: true
+        required: false
+  - name: Virusshare
+    parameters:
+      - name: path
+        description: Define the path to the stored data
+        type: string
+        multi: false
+        required: false
+  - name: Vulners_CVE
+    parameters:
+      - name: key
+        description: API key for Vulners
+        type: string
+        multi: false
+        required: true
+  - name: Vulners_IOC
+    parameters:
+      - name: key
+        description: API key for Vulners
+        type: string
+        multi: false
+        required: true
+  - name: WOT_Lookup
+    parameters:
+      - name: user
+        description: Define the API user
+        type: string
+        multi: false
+        required: true
+      - name: key
+        description: Define the API key
+        type: string
+        multi: false
+        required: true
+  - name: Yara
+    parameters:
+      - name: rules
+        description: Define the path rules folder
+        type: string
+        multi: true
+        required: true
+  - name: Yeti
+    parameters:
+      - name: url
+        description: Define the URL of the service
+        type: string
+        multi: false
+        required: true
+      - name: api_key
+        description: Define the api key of the service
+        type: string
+        multi: false
+        required: false
+      - name: verify_ssl
+        description: Verify SSL certificate
+        type: boolean
+        multi: false
+        required: true
